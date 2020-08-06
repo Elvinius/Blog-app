@@ -1,3 +1,10 @@
+body {
+	background: #005AA7;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
 i.icon {
 	font-size: 2em;
 }
@@ -8,4 +15,25 @@ div.container.segment {
 
 #delete {
 	display: inline;
+}
+
+div#main-heading {
+	margin-top: 4em;
+}
+
+.fixed.vertical.form-page {
+	margin-top: 14em;
+	margin-bottom: 0;
+}
+
+.fixed.vertical.form-page > .ui.container {
+	text-align: center;
+}
+
+i.right.chevron.icon {
+	text-align: center;
+}
+
+#blog-content {
+	margin-top: 4em;
 }

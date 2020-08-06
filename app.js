@@ -4,10 +4,10 @@ mongoose       = require("mongoose"),
 methodOverride = require("method-override"),
 express        = require("express"),
 app            = express();
-
+require('dotenv').config()
 
 //APP Config
-mongoose.connect("mongodb://localhost:27017/restful_blog_app", { useNewUrlParser: true,
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true,
 	useUnifiedTopology: true
 	});
 app.set("view engine", "ejs");
@@ -61,7 +61,6 @@ req.body.blog.body = req.sanitize(req.body.blog.body);
 			//then, redirect to index
 			res.redirect("/blogs");
 		}
-		
 	});
 });
 //SHOW ROUTE
@@ -111,8 +110,6 @@ app.delete("/blogs/:id", function(req,res){
 		}
 	});
 });
-app.listen(3000, function(){
-	console.log("BlogApp server has Started!");
-});
 
-
+app.listen(process.env.PORT, function(){
+		console.log("The blog app Has Started!"); });
